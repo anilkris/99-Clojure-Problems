@@ -16,7 +16,7 @@
   ;; This is a clojure form. Enter a value which will make the form evaluate to
   ;; true. Don't over think it! If you are confused, see the getting started
   ;; page. Hint: true is equal to true.
-  nil)
+  true)
 
 
 ;; problem 2 (Elementary)
@@ -24,53 +24,53 @@
   ;; If you are not familiar with polish notation, simple arithmetic might seem
   ;; confusing. Note: Enter only enough to fill in the blank (in this case, a
   ;; single number) - do not retype the whole problem.
-  nil)
+  4)
 
 
 ;; problem 3 (Elementary)
 (def intro-to-strings-solution
   ;; Clojure strings are Java strings. This means that you can use any of the
   ;; Java string methods on Clojure strings.
-  nil)
+  (.toUpperCase "hello world"))
 
 
 ;; problem 4 (Elementary)
-(def intro-to-lists-solution
+(defn intro-to-lists-solution []
   ;; Lists can be constructed with either a function or a quoted form.
-  nil)
+  (list :a :b :c))
 
 
 ;; problem 5 (Elementary)
 (def lists-conj-solution
   ;; When operating on a list, the conj function will return a new list with
   ;; one or more items "added" to the front.
-  nil)
+  (conj '(2 3 4) 1))
 
 
 ;; problem 6 (Elementary)
 (def intro-to-vectors-solution
   ;; Vectors can be constructed several ways. You can compare them with lists.
-  nil)
+  [:a :b :c])
 
 
 ;; problem 7 (Elementary)
 (def vectors-conj-solution
   ;; When operating on a Vector, the conj function will return a new vector
   ;; with one or more items "added" to the end.
-  nil)
+  (conj [ 1 2 3 ] 4))
 
 
 ;; problem 8 (Elementary)
 (def intro-to-sets-solution
   ;; Sets are collections of unique values.
-  nil)
+  #{:a :b :c :d})
 
 
 ;; problem 9 (Elementary)
 (def sets-conj-solution
   ;; When operating on a set, the conj function returns a new set with one or
   ;; more keys "added".
-  nil)
+ 2 )
 
 
 ;; problem 10 (Elementary)
@@ -78,41 +78,41 @@
   ;; Maps store key-value pairs. Both maps and keywords can be used as lookup
   ;; functions. Commas can be used to make maps more readable, but they are not
   ;; required.
-  nil)
+  20)
 
 
 ;; problem 11 (Elementary)
 (def maps-conj-solution
   ;; When operating on a map, the conj function returns a new map with one or
   ;; more key-value pairs "added".
-  nil)
+  {:b 2})
 
 
 ;; problem 12 (Elementary)
 (def intro-to-sequences-solution
   ;; All Clojure collections support sequencing. You can operate on sequences
   ;; with functions like first, second, and last.
-  nil)
+  3)
 
 
 ;; problem 13 (Elementary)
 (def sequences-rest-solution
   ;; The rest function will return all the items of a sequence except the
   ;; first.
-  nil)
+  [20 30 40])
 
 
 ;; problem 14 (Elementary)
 (def intro-to-functions-solution
   ;; Clojure has many different ways to create functions.
-  nil)
+  8)
 
 
 ;; problem 15 (Elementary)
 (defn double-down-solution
   [& args] ;; update args as needed
   ;; Write a function which doubles a number.
-  nil)
+  (apply #(* 2 %) args))
 
 
 ;; problem 16 (Elementary)
