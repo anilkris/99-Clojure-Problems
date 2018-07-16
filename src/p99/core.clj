@@ -1,4 +1,5 @@
-(ns p99.core)
+(ns p99.core
+  (:require [clojure.string :as str]))
 
 ;;; All 99 problems are listed below. Each one indicates its level of
 ;;; difficulty as well as the text of the problem. There are just skeletons,
@@ -117,66 +118,89 @@
 
 ;; problem 16 (Elementary)
 (defn hello-world-solution
-  [& args] ;; update args as needed
+  [ name] ;; update args as needed
   ;; Write a function which returns a personalized greeting.
-  nil)
+  (apply str "Hello, " name "!")
+  )
 
 
 ;; problem 17 (Elementary)
-(defn sequences-map-solution
-  [& args] ;; update args as needed
+(def sequences-map-solution
   ;; The map function takes two arguments: a function (f) and a sequence (s).
   ;; Map returns a new sequence consisting of the result of applying f to each
   ;; item of s. Do not confuse the map function with the map data structure.
-  nil)
+  '(6 7 8))
 
 
 ;; problem 18 (Elementary)
-(defn sequences-filter-solution
-  [& args] ;; update args as needed
+(def sequences-filter-solution
   ;; The filter function takes two arguments: a predicate function (f) and a
   ;; sequence (s). Filter returns a new sequence consisting of all the items of
   ;; s for which (f item) returns true.
-  nil)
+  '(6 7))
 
 
 ;; problem 19 (Easy)
 ;; restrictions: last
 (defn last-element-solution
-  [& args] ;; update args as needed
+  [ & args] ;; update args as needed
   ;; Write a function which returns the last element in a sequence.
-  nil)
+  (let [x (first args)] (last x)
+        )
+   )
+
 
 
 ;; problem 20 (Easy)
 (defn penultimate-element-solution
-  [& args] ;; update args as needed
+  [ args] ;; update args as needed
   ;; Write a function which returns the second to last element from a sequence.
-  nil)
+  (second (reverse args)))
 
 
 ;; problem 21 (Easy)
 ;; restrictions: nth
 (defn nth-element-solution
-  [& args] ;; update args as needed
+  [mylist nth] ;; update args as needed
   ;; Write a function which returns the Nth element from a sequence.
-  nil)
+    (if (= nth 0)
+      (first mylist)
+       (recur (rest mylist) (dec nth)) 
+      )
+  )
 
 
 ;; problem 22 (Easy)
 ;; restrictions: count
 (defn count-a-sequence-solution
-  [& args] ;; update args as needed
+  [ mylist] ;; update args as needed
   ;; Write a function which returns the total number of elements in a sequence.
-  nil)
+  (loop [list1 mylist x 0]
+    (if (empty? list1 )
+       x 
+      (recur (rest list1)(inc x))
+      )
+    )
+ )
 
 
 ;; problem 23 (Easy)
 ;; restrictions: reverse, rseq
 (defn reverse-a-sequence-solution
-  [& args] ;; update args as needed
+  [args] ;; update args as needed
   ;; Write a function which reverses a sequence.
-  nil)
+  nil
+  (loop [mylist args resplist '()]
+    (if (empty? mylist)
+       resplist
+       (recur (rest mylist) (cons (first mylist) resplist))
+
+      )
+
+
+      )
+
+  )
 
 
 ;; problem 24 (Easy)

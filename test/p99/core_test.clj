@@ -93,61 +93,61 @@
   (is (= (double-down-solution 7) 14)))
 ;
 ;
-;;; problem 16
-;(deftest can-hello-world
-;  (is (= (hello-world-solution "Dave") "Hello, Dave!"))
-;  (is (= (hello-world-solution "Jenn") "Hello, Jenn!"))
-;  (is (= (hello-world-solution "Rhea") "Hello, Rhea!")))
-;
+;;problem 16
+(deftest can-hello-world
+ (is (= (hello-world-solution "Dave") "Hello, Dave!"))
+ (is (= (hello-world-solution "Jenn") "Hello, Jenn!"))
+ (is (= (hello-world-solution "Rhea") "Hello, Rhea!")))
+
 ;
 ;;; problem 17
-;(deftest can-sequences-map
-;  (is (= sequences-map-solution (map #(+ % 5) '(1 2 3)))))
-;
+(deftest can-sequences-map
+ (is (= sequences-map-solution (map #(+ % 5) '(1 2 3)))))
+
 ;
 ;;; problem 18
-;(deftest can-sequences-filter
-;  (is (= sequences-filter-solution (filter #(> % 5) '(3 4 5 6 7)))))
-;
+(deftest can-sequences-filter
+ (is (= sequences-filter-solution (filter #(> % 5) '(3 4 5 6 7)))))
+
 ;
 ;;; problem 19
-;(deftest can-last-element
-;  (is (= (last-element-solution [1 2 3 4 5]) 5))
-;  (is (= (last-element-solution '(5 4 3)) 3))
-;  (is (= (last-element-solution ["b" "c" "d"]) "d")))
-;
+(deftest can-last-element
+ (is (= (last-element-solution [1 2 3 4 5]) 5))
+ (is (= (last-element-solution '(5 4 3)) 3))
+ (is (= (last-element-solution ["b" "c" "d"]) "d")))
+
 ;
 ;;; problem 20
-;(deftest can-penultimate-element
-;  (is (= (penultimate-element-solution (list 1 2 3 4 5)) 4))
-;  (is (= (penultimate-element-solution ["a" "b" "c"]) "b"))
-;  (is (= (penultimate-element-solution [[1 2] [3 4]]) [1 2])))
+(deftest can-penultimate-element
+ (is (= (penultimate-element-solution (list 1 2 3 4 5)) 4))
+ (is (= (penultimate-element-solution ["a" "b" "c"]) "b"))
+ (is (= (penultimate-element-solution [[1 2] [3 4]]) [1 2])))
+
 ;
-;
-;;; problem 21
-;(deftest can-nth-element
-;  (is (= (nth-element-solution '(4 5 6 7) 2) 6))
-;  (is (= (nth-element-solution [:a :b :c] 0) :a))
-;  (is (= (nth-element-solution [1 2 3 4] 1) 2))
-;  (is (= (nth-element-solution '([1 2] [3 4] [5 6]) 2) [5 6])))
-;
-;
+;; problem 21
+(deftest can-nth-element
+ (is (= (nth-element-solution '(4 5 6 7) 2) 6))
+ (is (= (nth-element-solution [:a :b :c] 0) :a))
+ (is (= (nth-element-solution [1 2 3 4] 1) 2))
+ (is (= (nth-element-solution '([1 2] [3 4] [5 6]) 2) [5 6])))
+
+
 ;;; problem 22
-;(deftest can-count-a-sequence
-;  (is (= (count-a-sequence-solution '(1 2 3 3 1)) 5))
-;  (is (= (count-a-sequence-solution "Hello World") 11))
-;  (is (= (count-a-sequence-solution [[1 2] [3 4] [5 6]]) 3))
-;  (is (= (count-a-sequence-solution '(13)) 1))
-;  (is (= (count-a-sequence-solution '(:a :b :c)) 3)))
-;
+(deftest can-count-a-sequence
+ (is (= (count-a-sequence-solution '(1 2 3 3 1)) 5))
+ (is (= (count-a-sequence-solution "Hello World") 11))
+ (is (= (count-a-sequence-solution [[1 2] [3 4] [5 6]]) 3))
+ (is (= (count-a-sequence-solution '(13)) 1))
+ (is (= (count-a-sequence-solution '(:a :b :c)) 3)))
+
 ;
 ;;; problem 23
-;(deftest can-reverse-a-sequence
-;  (is (= (reverse-a-sequence-solution [1 2 3 4 5]) [5 4 3 2 1]))
-;  (is (= (reverse-a-sequence-solution (sorted-set 5 7 2 7)) '(7 5 2)))
-;  (is (= (reverse-a-sequence-solution [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])))
-;
-;
+(deftest can-reverse-a-sequence
+ (is (= (reverse-a-sequence-solution [1 2 3 4 5]) [5 4 3 2 1]))
+ (is (= (reverse-a-sequence-solution (sorted-set 5 7 2 7)) '(7 5 2)))
+ (is (= (reverse-a-sequence-solution [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])))
+
+
 ;;; problem 24
 ;(deftest can-sum-it-all-up
 ;  (is (= (sum-it-all-up-solution [1 2 3]) 6))
