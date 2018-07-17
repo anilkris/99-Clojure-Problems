@@ -203,69 +203,69 @@
 
 
 ; ;; problem 31
-; (deftest can-pack-a-sequence
-;   (is (= (pack-a-sequence-solution [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3))))
-;   (is (= (pack-a-sequence-solution [:a :a :b :b :c]) '((:a :a) (:b :b) (:c))))
-;   (is (= (pack-a-sequence-solution [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))
-;
-;
+(deftest can-pack-a-sequence
+  (is (= (pack-a-sequence-solution [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3))))
+  (is (= (pack-a-sequence-solution [:a :a :b :b :c]) '((:a :a) (:b :b) (:c))))
+  (is (= (pack-a-sequence-solution [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))))
+
+
 ; ;; problem 32
-; (deftest can-duplicate-a-sequence
-;   (is (= (duplicate-a-sequence-solution [1 2 3]) '(1 1 2 2 3 3)))
-;   (is (= (duplicate-a-sequence-solution [:a :a :b :b]) '(:a :a :a :a :b :b :b :b)))
-;   (is (= (duplicate-a-sequence-solution [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4])))
-;   (is (= (duplicate-a-sequence-solution [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))))
-;
+(deftest can-duplicate-a-sequence
+  (is (= (duplicate-a-sequence-solution [1 2 3]) '(1 1 2 2 3 3)))
+  (is (= (duplicate-a-sequence-solution [:a :a :b :b]) '(:a :a :a :a :b :b :b :b)))
+  (is (= (duplicate-a-sequence-solution [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4])))
+  (is (= (duplicate-a-sequence-solution [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))))
+
 ;
 ; ;; problem 33
-; (deftest can-replicate-a-sequence
-;   (is (= (replicate-a-sequence-solution [1 2 3] 2) '(1 1 2 2 3 3)))
-;   (is (= (replicate-a-sequence-solution [:a :b] 4) '(:a :a :a :a :b :b :b :b)))
-;   (is (= (replicate-a-sequence-solution [4 5 6] 1) '(4 5 6)))
-;   (is (= (replicate-a-sequence-solution [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4])))
-;   (is (= (replicate-a-sequence-solution [44 33] 2) [44 44 33 33])))
-;
+(deftest can-replicate-a-sequence
+  (is (= (replicate-a-sequence-solution [1 2 3] 2) '(1 1 2 2 3 3)))
+  (is (= (replicate-a-sequence-solution [:a :b] 4) '(:a :a :a :a :b :b :b :b)))
+  (is (= (replicate-a-sequence-solution [4 5 6] 1) '(4 5 6)))
+  (is (= (replicate-a-sequence-solution [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4])))
+  (is (= (replicate-a-sequence-solution [44 33] 2) [44 44 33 33])))
+
 ;
 ; ;; problem 34
-; (deftest can-implement-range
-;   (is (= (implement-range-solution 1 4) '(1 2 3)))
-;   (is (= (implement-range-solution -2 2) '(-2 -1 0 1)))
-;   (is (= (implement-range-solution 5 8) '(5 6 7))))
-;
+(deftest can-implement-range
+  (is (= (implement-range-solution 1 4) '(1 2 3)))
+  (is (= (implement-range-solution -2 2) '(-2 -1 0 1)))
+  (is (= (implement-range-solution 5 8) '(5 6 7))))
+
 ;
 ; ;; problem 35
-; (deftest can-local-bindings
-;   (is (= local-bindings-solution (let [x 5] (+ 2 x))))
-;   (is (= local-bindings-solution (let [x 3, y 10] (- y x))))
-;   (is (= local-bindings-solution (let [x 21] (let [y 3] (/ x y))))))
-;
+(deftest can-local-bindings
+  (is (= local-bindings-solution (let [x 5] (+ 2 x))))
+  (is (= local-bindings-solution (let [x 3, y 10] (- y x))))
+  (is (= local-bindings-solution (let [x 21] (let [y 3] (/ x y))))))
+
 ;
  ;; problem 36
- ;(deftest can-let-it-be
- ;  (is (= 10 (let let-it-be-solution (+ x y))))
- ;  (is (= 4 (let let-it-be-solution (+ y z))))
- ;  (is (= 1 (let let-it-be-solution z))))
+(deftest can-let-it-be
+  (is (= 10 (let [x 7 y 3 z 1] (+ x y))))
+  (is (= 4 (let [x 7  y 3 z 1 ] (+ y z))))
+  (is (= 1 (let [x 7 y 3 z 1] z))))
 
 
  ;; problem 37
-; (deftest can-regular-expressions
-;   (is (= regular-expressions-solution (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))))
+(deftest can-regular-expressions
+  (is (= regular-expressions-solution (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))))
 ;
 ;
 ; ;; problem 38
-; (deftest can-maximum-value
-;   (is (= (maximum-value-solution 1 8 3 4) 8))
-;   (is (= (maximum-value-solution 30 20) 30))
-;   (is (= (maximum-value-solution 45 67 11) 67)))
-;
-;
+ (deftest can-maximum-value
+   (is (= (maximum-value-solution 1 8 3 4) 8))
+   (is (= (maximum-value-solution 30 20) 30))
+   (is (= (maximum-value-solution 45 67 11) 67)))
+
+                                        ;
 ; ;; problem 39
-; (deftest can-interleave-two-seqs
-;   (is (= (interleave-two-seqs-solution [1 2 3] [:a :b :c]) '(1 :a 2 :b 3 :c)))
-;   (is (= (interleave-two-seqs-solution [1 2] [3 4 5 6]) '(1 3 2 4)))
-;   (is (= (interleave-two-seqs-solution [1 2 3 4] [5]) [1 5]))
-;   (is (= (interleave-two-seqs-solution [30 20] [25 15]) [30 25 20 15])))
-;
+(deftest can-interleave-two-seqs
+  (is (= (interleave-two-seqs-solution [1 2 3] [:a :b :c]) '(1 :a 2 :b 3 :c)))
+  (is (= (interleave-two-seqs-solution [1 2] [3 4 5 6]) '(1 3 2 4)))
+  (is (= (interleave-two-seqs-solution [1 2 3 4] [5]) [1 5]))
+  (is (= (interleave-two-seqs-solution [30 20] [25 15]) [30 25 20 15])))
+
 ;
 ; ;; problem 40
 ; (deftest can-interpose-a-seq

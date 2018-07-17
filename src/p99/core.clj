@@ -222,47 +222,52 @@
 
 ;; problem 31 (Easy)
 (defn pack-a-sequence-solution
-  [& args] ;; update args as needed
+  [args] ;; update args as needed
   ;; Write a function which packs consecutive duplicates into sub-lists.
-  nil)
+  (partition-by identity args) )
 
 ;; problem 32 (Easy)
 (defn duplicate-a-sequence-solution
-  [& args] ;; update args as needed
+  [ args] ;; update args as needed
   ;; Write a function which duplicates each element of a sequence.
-  nil)
+  (mapcat #(repeat 2 %) args))
 
 ;; problem 33 (Easy)
 (defn replicate-a-sequence-solution
-  [& args] ;; update args as needed
+  [mylist n] ;; update args as needed
   ;; Write a function which replicates each element of a sequence a variable
   ;; number of times.
-  nil)
+  (mapcat #(repeat n %) mylist))
 
 ;; problem 34 (Easy)
 ;; restrictions: range
 (defn implement-range-solution
-  [& args] ;; update args as needed
+  [source  dest] ;; update args as needed
   ;; Write a function which creates a list of all integers in a given range.
-  nil)
+  (loop [s source mylist '()]
+    (if (= dest s)
+      (reverse mylist)
+       (recur (inc s) (cons s mylist))
+
+      )
+    ))
 
 ;; problem 35 (Elementary)
-(defn local-bindings-solution
-  [& args] ;; update args as needed
-  ;; Clojure lets you give local names to values using the special let-form.
-  nil)
+(def local-bindings-solution
+ ;; Clojure lets you give local names to values using the special let-form.
+  7)
 
 ;; problem 36 (Elementary)
 (defn let-it-be-solution
-  [& args] ;; update args as needed
+  []
   ;; Can you bind x, y, and z so that these are all true?
-  nil)
+   ['x 7  'y 3 'z 1]
+  )
 
 ;; problem 37 (Elementary)
-(defn regular-expressions-solution
-  [& args] ;; update args as needed
+(def regular-expressions-solution
   ;; Regex patterns are supported with a special reader macro.
-  nil)
+  "ABC")
 
 ;; problem 38 (Easy)
 ;; restrictions: max, max-key
@@ -270,7 +275,16 @@
   [& args] ;; update args as needed
   ;; Write a function which takes a variable number of parameters and returns
   ;; the maximum value.
-  nil)
+
+  (reduce (fn[x y] (if (> x y) x y)) args)
+
+  )
+
+(defn mymax [ & args]
+
+  (reduce (fn[x y] (if (> x y) x y)) args)
+
+  )
 
 ;; problem 39 (Easy)
 ;; restrictions: interleave
