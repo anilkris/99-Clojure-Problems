@@ -19,7 +19,6 @@
   ;; page. Hint: true is equal to true.
   true)
 
-
 ;; problem 2 (Elementary)
 (def simple-math-solution
   ;; If you are not familiar with polish notation, simple arithmetic might seem
@@ -27,19 +26,16 @@
   ;; single number) - do not retype the whole problem.
   4)
 
-
 ;; problem 3 (Elementary)
 (def intro-to-strings-solution
   ;; Clojure strings are Java strings. This means that you can use any of the
   ;; Java string methods on Clojure strings.
   (.toUpperCase "hello world"))
 
-
 ;; problem 4 (Elementary)
 (defn intro-to-lists-solution []
   ;; Lists can be constructed with either a function or a quoted form.
   (list :a :b :c))
-
 
 ;; problem 5 (Elementary)
 (def lists-conj-solution
@@ -47,32 +43,27 @@
   ;; one or more items "added" to the front.
   (conj '(2 3 4) 1))
 
-
 ;; problem 6 (Elementary)
 (def intro-to-vectors-solution
   ;; Vectors can be constructed several ways. You can compare them with lists.
   [:a :b :c])
 
-
 ;; problem 7 (Elementary)
 (def vectors-conj-solution
   ;; When operating on a Vector, the conj function will return a new vector
   ;; with one or more items "added" to the end.
-  (conj [ 1 2 3 ] 4))
-
+  (conj [1 2 3] 4))
 
 ;; problem 8 (Elementary)
 (def intro-to-sets-solution
   ;; Sets are collections of unique values.
   #{:a :b :c :d})
 
-
 ;; problem 9 (Elementary)
 (def sets-conj-solution
   ;; When operating on a set, the conj function returns a new set with one or
   ;; more keys "added".
- 2 )
-
+  2)
 
 ;; problem 10 (Elementary)
 (def intro-to-maps-solution
@@ -81,13 +72,11 @@
   ;; required.
   20)
 
-
 ;; problem 11 (Elementary)
 (def maps-conj-solution
   ;; When operating on a map, the conj function returns a new map with one or
   ;; more key-value pairs "added".
   {:b 2})
-
 
 ;; problem 12 (Elementary)
 (def intro-to-sequences-solution
@@ -95,19 +84,16 @@
   ;; with functions like first, second, and last.
   3)
 
-
 ;; problem 13 (Elementary)
 (def sequences-rest-solution
   ;; The rest function will return all the items of a sequence except the
   ;; first.
   [20 30 40])
 
-
 ;; problem 14 (Elementary)
 (def intro-to-functions-solution
   ;; Clojure has many different ways to create functions.
   8)
-
 
 ;; problem 15 (Elementary)
 (defn double-down-solution
@@ -115,14 +101,11 @@
   ;; Write a function which doubles a number.
   (apply #(* 2 %) args))
 
-
 ;; problem 16 (Elementary)
 (defn hello-world-solution
-  [ name] ;; update args as needed
+  [name] ;; update args as needed
   ;; Write a function which returns a personalized greeting.
-  (apply str "Hello, " name "!")
-  )
-
+  (apply str "Hello, " name "!"))
 
 ;; problem 17 (Elementary)
 (def sequences-map-solution
@@ -131,7 +114,6 @@
   ;; item of s. Do not confuse the map function with the map data structure.
   '(6 7 8))
 
-
 ;; problem 18 (Elementary)
 (def sequences-filter-solution
   ;; The filter function takes two arguments: a predicate function (f) and a
@@ -139,50 +121,37 @@
   ;; s for which (f item) returns true.
   '(6 7))
 
-
 ;; problem 19 (Easy)
 ;; restrictions: last
 (defn last-element-solution
-  [ & args] ;; update args as needed
+  [& args] ;; update args as needed
   ;; Write a function which returns the last element in a sequence.
-  (let [x (first args)] (last x)
-        )
-   )
-
-
+  (let [x (first args)] (last x)))
 
 ;; problem 20 (Easy)
 (defn penultimate-element-solution
-  [ args] ;; update args as needed
+  [args] ;; update args as needed
   ;; Write a function which returns the second to last element from a sequence.
   (second (reverse args)))
-
 
 ;; problem 21 (Easy)
 ;; restrictions: nth
 (defn nth-element-solution
   [mylist nth] ;; update args as needed
   ;; Write a function which returns the Nth element from a sequence.
-    (if (= nth 0)
-      (first mylist)
-       (recur (rest mylist) (dec nth)) 
-      )
-  )
-
+  (if (= nth 0)
+    (first mylist)
+    (recur (rest mylist) (dec nth))))
 
 ;; problem 22 (Easy)
 ;; restrictions: count
 (defn count-a-sequence-solution
-  [ mylist] ;; update args as needed
+  [mylist] ;; update args as needed
   ;; Write a function which returns the total number of elements in a sequence.
   (loop [list1 mylist x 0]
-    (if (empty? list1 )
-       x 
-      (recur (rest list1)(inc x))
-      )
-    )
- )
-
+    (if (empty? list1)
+      x
+      (recur (rest list1) (inc x)))))
 
 ;; problem 23 (Easy)
 ;; restrictions: reverse, rseq
@@ -192,69 +161,64 @@
   nil
   (loop [mylist args resplist '()]
     (if (empty? mylist)
-       resplist
-       (recur (rest mylist) (cons (first mylist) resplist))
-
-      )
-
-
-      )
-
-  )
-
+      resplist
+      (recur (rest mylist) (cons (first mylist) resplist)))))
 
 ;; problem 24 (Easy)
 (defn sum-it-all-up-solution
-  [& args] ;; update args as needed
+  [ args] ;; update args as needed
   ;; Write a function which returns the sum of a sequence of numbers.
-  nil)
-
+  (reduce + args))
 
 ;; problem 25 (Easy)
 (defn find-the-odd-numbers-solution
-  [& args] ;; update args as needed
+  [ args] ;; update args as needed
   ;; Write a function which returns only the odd numbers from a sequence.
-  nil)
-
+  (filter odd? args))
 
 ;; problem 26 (Easy)
 (defn fibonacci-sequence-solution
-  [& args] ;; update args as needed
+  [x] ;; update args as needed
   ;; Write a function which returns the first X fibonacci numbers.
-  nil)
-
+  (loop [n x mylist '(1 1)]
+    (if (or (= n 2) (< n 2))
+      (reverse mylist)
+    (recur (dec n) (cons (+ (first mylist)(second mylist) ) mylist))
+ )
+    )
+  )
 
 ;; problem 27 (Easy)
 (defn palindrome-detector-solution
-  [& args] ;; update args as needed
+  [ arg] ;; update args as needed
   ;; Write a function which returns true if the given sequence is a palindrome.
   ;;
   ;; Hint: "racecar" does not equal '(\r \a \c \e \c \a \r)
-  nil)
-
+  (= (reverse (seq arg)) (seq arg))
+  )
 
 ;; problem 28 (Easy)
 ;; restrictions: flatten
 (defn flatten-a-sequence-solution
-  [& args] ;; update args as needed
+  [ x] ;; update args as needed
   ;; Write a function which flattens a sequence.
-  nil)
-
+  (filter (complement sequential?)
+          (rest (tree-seq sequential? seq x)))
+  )
 
 ;; problem 29 (Easy)
 (defn get-the-caps-solution
-  [& args] ;; update args as needed
+  [mystr] ;; update args as needed
   ;; Write a function which takes a string and returns a new string containing
   ;; only the capital letters.
-  nil)
-
+  (apply str (filter #(Character/isUpperCase %) mystr)))
 
 ;; problem 30 (Easy)
 (defn compress-a-sequence-solution
-  [& args] ;; update args as needed
+  [ arg] ;; update args as needed
   ;; Write a function which removes consecutive duplicates from a sequence.
-  nil)
-
+  (map first (partition-by identity arg))
+ )
 
 ;; problem 31 (Easy)
 (defn pack-a-sequence-solution
@@ -262,13 +226,11 @@
   ;; Write a function which packs consecutive duplicates into sub-lists.
   nil)
 
-
 ;; problem 32 (Easy)
 (defn duplicate-a-sequence-solution
   [& args] ;; update args as needed
   ;; Write a function which duplicates each element of a sequence.
   nil)
-
 
 ;; problem 33 (Easy)
 (defn replicate-a-sequence-solution
@@ -277,7 +239,6 @@
   ;; number of times.
   nil)
 
-
 ;; problem 34 (Easy)
 ;; restrictions: range
 (defn implement-range-solution
@@ -285,13 +246,11 @@
   ;; Write a function which creates a list of all integers in a given range.
   nil)
 
-
 ;; problem 35 (Elementary)
 (defn local-bindings-solution
   [& args] ;; update args as needed
   ;; Clojure lets you give local names to values using the special let-form.
   nil)
-
 
 ;; problem 36 (Elementary)
 (defn let-it-be-solution
@@ -299,13 +258,11 @@
   ;; Can you bind x, y, and z so that these are all true?
   nil)
 
-
 ;; problem 37 (Elementary)
 (defn regular-expressions-solution
   [& args] ;; update args as needed
   ;; Regex patterns are supported with a special reader macro.
   nil)
-
 
 ;; problem 38 (Easy)
 ;; restrictions: max, max-key
@@ -315,7 +272,6 @@
   ;; the maximum value.
   nil)
 
-
 ;; problem 39 (Easy)
 ;; restrictions: interleave
 (defn interleave-two-seqs-solution
@@ -323,7 +279,6 @@
   ;; Write a function which takes two sequences and returns the first item from
   ;; each, then the second item from each, then the third, etc.
   nil)
-
 
 ;; problem 40 (Easy)
 ;; restrictions: interpose
@@ -333,20 +288,17 @@
   ;; value.
   nil)
 
-
 ;; problem 41 (Easy)
 (defn drop-every-nth-item-solution
   [& args] ;; update args as needed
   ;; Write a function which drops every Nth item from a sequence.
   nil)
 
-
 ;; problem 42 (Easy)
 (defn factorial-fun-solution
   [& args] ;; update args as needed
   ;; Write a function which calculates factorials.
   nil)
-
 
 ;; problem 43 (Medium)
 (defn reverse-interleave-solution
@@ -355,13 +307,11 @@
   ;; subsequences.
   nil)
 
-
 ;; problem 44 (Medium)
 (defn rotate-sequence-solution
   [& args] ;; update args as needed
   ;; Write a function which can rotate a sequence in either direction.
   nil)
-
 
 ;; problem 45 (Easy)
 (defn intro-to-iterate-solution
@@ -369,14 +319,12 @@
   ;; The iterate function can be used to produce an infinite lazy sequence.
   nil)
 
-
 ;; problem 46 (Medium)
 (defn flipping-out-solution
   [& args] ;; update args as needed
   ;; Write a higher-order function which flips the order of the arguments of an
   ;; input function.
   nil)
-
 
 ;; problem 47 (Easy)
 (defn contain-yourself-solution
@@ -386,7 +334,6 @@
   ;; numerically indexed collections like vectors and lists.
   nil)
 
-
 ;; problem 48 (Easy)
 (defn intro-to-some-solution
   [& args] ;; update args as needed
@@ -395,14 +342,12 @@
   ;; collection.
   nil)
 
-
 ;; problem 49 (Easy)
 ;; restrictions: split-at
 (defn split-a-sequence-solution
   [& args] ;; update args as needed
   ;; Write a function which will split a sequence into two parts.
   nil)
-
 
 ;; problem 50 (Medium)
 (defn split-by-type-solution
@@ -414,20 +359,17 @@
   ;; is used in the test cases).
   nil)
 
-
 ;; problem 51 (Easy)
 (defn advanced-destructuring-solution
   [& args] ;; update args as needed
   ;; Here is an example of some more sophisticated destructuring.
   nil)
 
-
 ;; problem 52 (Easy)
 (defn intro-to-destructuring-solution
   [& args] ;; update args as needed
   ;; Let bindings and function parameter lists support destructuring.
   nil)
-
 
 ;; problem 53 (Hard)
 (defn longest-increasing-sub-seq-solution
@@ -438,7 +380,6 @@
   ;; greater to qualify.
   nil)
 
-
 ;; problem 54 (Medium)
 ;; restrictions: partition, partition-all
 (defn partition-a-sequence-solution
@@ -446,7 +387,6 @@
   ;; Write a function which returns a sequence of lists of x items each. Lists
   ;; of less than x items should not be returned.
   nil)
-
 
 ;; problem 55 (Medium)
 ;; restrictions: frequencies
@@ -456,7 +396,6 @@
   ;; of each distinct item in a sequence.
   nil)
 
-
 ;; problem 56 (Medium)
 ;; restrictions: distinct
 (defn find-distinct-items-solution
@@ -465,14 +404,12 @@
   ;; the items must be maintained.
   nil)
 
-
 ;; problem 57 (Elementary)
 (defn simple-recursion-solution
   [& args] ;; update args as needed
   ;; A recursive function is a function which calls itself. This is one of the
   ;; fundamental techniques used in functional programming.
   nil)
-
 
 ;; problem 58 (Medium)
 ;; restrictions: comp
@@ -483,7 +420,6 @@
   ;; function applies them from right-to-left.
   nil)
 
-
 ;; problem 59 (Medium)
 ;; restrictions: juxt
 (defn juxtaposition-solution
@@ -492,7 +428,6 @@
   ;; number of arguments and returns a sequence containing the result of
   ;; applying each function left-to-right to the argument list.
   nil)
-
 
 ;; problem 60 (Medium)
 ;; restrictions: reductions
@@ -503,7 +438,6 @@
   ;; arguments, and the return sequence must be lazy.
   nil)
 
-
 ;; problem 61 (Easy)
 ;; restrictions: zipmap
 (defn map-construction-solution
@@ -511,7 +445,6 @@
   ;; Write a function which takes a vector of keys and a vector of values and
   ;; constructs a map from them.
   nil)
-
 
 ;; problem 62 (Easy)
 ;; restrictions: iterate
@@ -521,7 +454,6 @@
   ;; function which returns an infinite lazy sequence of x, (f x), (f (f x)),
   ;; (f (f (f x))), etc.
   nil)
-
 
 ;; problem 63 (Easy)
 ;; restrictions: group-by
@@ -533,7 +465,6 @@
   ;; appear in s.
   nil)
 
-
 ;; problem 64 (Elementary)
 (defn intro-to-reduce-solution
   [& args] ;; update args as needed
@@ -544,7 +475,6 @@
   ;; from the sequence, thus reducing the entire collection to one value. Don't
   ;; worry, it's not as complicated as it sounds.
   nil)
-
 
 ;; problem 65 (Medium)
 ;; restrictions: class, type, Class, vector?, sequential?, list?, seq?, map?,
@@ -563,7 +493,6 @@
   ;; like list? - the point is to poke at them and understand their behavior.
   nil)
 
-
 ;; problem 66 (Easy)
 (defn greatest-common-divisor-solution
   [& args] ;; update args as needed
@@ -571,13 +500,11 @@
   ;; divisor.
   nil)
 
-
 ;; problem 67 (Medium)
 (defn prime-numbers-solution
   [& args] ;; update args as needed
   ;; Write a function which returns the first x number of prime numbers.
   nil)
-
 
 ;; problem 68 (Elementary)
 (defn recurring-theme-solution
@@ -588,7 +515,6 @@
   ;; Recur must be called from the tail-position, and calling it elsewhere will
   ;; result in an error.
   nil)
-
 
 ;; problem 69 (Medium)
 ;; restrictions: merge-with
@@ -601,7 +527,6 @@
   ;; mapping in the result by calling (f val-in-result val-in-latter)
   nil)
 
-
 ;; problem 70 (Medium)
 (defn word-sorting-solution
   [& args] ;; update args as needed
@@ -609,7 +534,6 @@
   ;; Capitalization should not affect sort order and punctuation should be
   ;; ignored.
   nil)
-
 
 ;; problem 71 (Elementary)
 (defn rearranging-code-solution
@@ -635,7 +559,6 @@
   ;; won.
   nil)
 
-
 ;; problem 74 (Medium)
 (defn filter-perfect-squares-solution
   [& args] ;; update args as needed
@@ -643,7 +566,6 @@
   ;; a new comma separated string that only contains the numbers which are
   ;; perfect squares.
   nil)
-
 
 ;; problem 75 (Medium)
 (defn euler-s-totient-function-solution
@@ -653,7 +575,6 @@
   ;; than x which are coprime to x. The special case f(1) equals 1. Write a
   ;; function which calculates Euler's totient function.
   nil)
-
 
 ;; problem 76 (Medium)
 (defn intro-to-trampoline-solution
@@ -667,7 +588,6 @@
   ;; stack.
   nil)
 
-
 ;; problem 77 (Medium)
 (defn anagram-finder-solution
   [& args] ;; update args as needed
@@ -679,14 +599,12 @@
   ;; should not be included in the result.
   nil)
 
-
 ;; problem 78 (Medium)
 ;; restrictions: trampoline
 (defn reimplement-trampoline-solution
   [& args] ;; update args as needed
   ;; Reimplement the function described in "Intro to Trampoline".
   nil)
-
 
 ;; problem 79 (Hard)
 (defn triangle-minimal-path-solution
@@ -697,7 +615,6 @@
   ;; the next row until the bottom of the triangle is reached.
   nil)
 
-
 ;; problem 80 (Medium)
 (defn perfect-numbers-solution
   [& args] ;; update args as needed
@@ -706,7 +623,6 @@
   ;; for perfect numbers and false otherwise.
   nil)
 
-
 ;; problem 81 (Easy)
 ;; restrictions: intersection
 (defn set-intersection-solution
@@ -714,7 +630,6 @@
   ;; Write a function which returns the intersection of two sets. The
   ;; intersection is the sub-set of items that each set has in common.
   nil)
-
 
 ;; problem 82 (Hard)
 (defn word-chains-solution
@@ -730,7 +645,6 @@
   ;; can be arranged into one continous word chain, and false if they cannot.
   nil)
 
-
 ;; problem 83 (Easy)
 (defn a-half-truth-solution
   [& args] ;; update args as needed
@@ -739,14 +653,12 @@
   ;; parameters are true. Otherwise your function should return false.
   nil)
 
-
 ;; problem 84 (Hard)
 (defn transitive-closure-solution
   [& args] ;; update args as needed
   ;; Write a function which generates the transitive closure of a binary
   ;; relation. The relation will be represented as a set of 2 item vectors.
   nil)
-
 
 ;; problem 85 (Medium)
 (defn power-set-solution
@@ -755,7 +667,6 @@
   ;; set of a set x is the set of all subsets of x, including the empty set and
   ;; x itself.
   nil)
-
 
 ;; problem 86 (Medium)
 (defn happy-numbers-solution
@@ -768,7 +679,6 @@
   ;; determines if a number is happy or not.
   nil)
 
-
 ;; problem 88 (Easy)
 (defn symmetric-difference-solution
   [& args] ;; update args as needed
@@ -776,7 +686,6 @@
   ;; symmetric difference is the set of items belonging to one but not both of
   ;; the two sets.
   nil)
-
 
 ;; problem 89 (Hard)
 (defn graph-tour-solution
@@ -794,13 +703,11 @@
   ;; - You must visit each edge exactly once. - All edges are undirected.
   nil)
 
-
 ;; problem 90 (Easy)
 (defn cartesian-product-solution
   [& args] ;; update args as needed
   ;; Write a function which calculates the Cartesian product of two sets.
   nil)
-
 
 ;; problem 91 (Hard)
 (defn graph-connectivity-solution
@@ -816,7 +723,6 @@
   ;;
   nil)
 
-
 ;; problem 92 (Hard)
 (defn read-roman-numerals-solution
   [& args] ;; update args as needed
@@ -830,7 +736,6 @@
   ;; ordinary letters.
   nil)
 
-
 ;; problem 93 (Medium)
 (defn partially-flatten-a-sequence-solution
   [& args] ;; update args as needed
@@ -839,7 +744,6 @@
   ;; items. The result should be a sequence of sequences with only one level of
   ;; nesting.
   nil)
-
 
 ;; problem 94 (Hard)
 (defn game-of-life-solution
@@ -864,7 +768,6 @@
   ;; the next generation of cells.
   nil)
 
-
 ;; problem 95 (Easy)
 (defn to-tree-or-not-to-tree-solution
   [& args] ;; update args as needed
@@ -872,7 +775,6 @@
   ;; a binary tree. Each node in the tree must have a value, a left child, and
   ;; a right child.
   nil)
-
 
 ;; problem 96 (Easy)
 (defn beauty-is-symmetry-solution
@@ -882,7 +784,6 @@
   ;; determine whether or not a given binary tree is symmetric. (see To Tree,
   ;; or not to Tree for a reminder on the tree representation we're using).
   nil)
-
 
 ;; problem 97 (Easy)
 (defn pascal-s-triangle-solution
@@ -897,7 +798,6 @@
   ;;
   nil)
 
-
 ;; problem 98 (Medium)
 (defn equivalence-classes-solution
   [& args] ;; update args as needed
@@ -906,7 +806,6 @@
   ;; equal to (f b). Write a function with arguments f and D that computes the
   ;; equivalence classes of D with respect to f.
   nil)
-
 
 ;; problem 99 (Easy)
 (defn product-digits-solution
